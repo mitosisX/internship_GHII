@@ -31,8 +31,10 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.homeView}>
-      <TouchableOpacity onPress={() => FetchData()} style={styles.fetchBtn}>
-        <Text style={{ fontWeight: "bold" }}>Fetch</Text>
+      <TouchableOpacity style={styles.fetchBtn}>
+        <Text style={{ fontWeight: "bold" }}>
+          Data will auto fetch upon opening
+        </Text>
       </TouchableOpacity>
 
       <Image
