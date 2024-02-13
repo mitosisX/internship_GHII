@@ -1,6 +1,6 @@
 import * as SQLite from "expo-sqlite";
 
-const db = SQLite.openDatabase("a3.db");
+const db = SQLite.openDatabase("practical.db");
 
 export function CreateTable() {
   db.transaction((tx) => {
