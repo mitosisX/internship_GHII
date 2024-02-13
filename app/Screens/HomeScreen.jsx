@@ -14,7 +14,7 @@ export default function HomeScreen() {
   let [data, setData] = useState([]);
 
   useEffect(() => {
-    CreateTable();
+    CreateTable(); // Don't do anything untill table has been created
 
     const fetchData = async () => {
       try {
@@ -26,7 +26,7 @@ export default function HomeScreen() {
       }
     };
 
-    fetchData();
+    fetchData(); //GET request to api.github.com/repositories
   }, []);
 
   return (
@@ -69,6 +69,7 @@ export default function HomeScreen() {
               <Text style={styles.repoText}>Type: {type}</Text>
               <Text style={styles.repoText}>Description: {description}</Text>
 
+              {/* This stores the data in SQLite */}
               {InsertData([
                 fullName,
                 private_,

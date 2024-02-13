@@ -2,6 +2,7 @@ import * as SQLite from "expo-sqlite";
 
 const db = SQLite.openDatabase("practical.db");
 
+// Make sure the table is created
 export function CreateTable() {
   db.transaction((tx) => {
     tx.executeSql(
@@ -12,6 +13,7 @@ export function CreateTable() {
   console.log("Table has been created!");
 }
 
+// Perfom INSERT query
 export function InsertData(data) {
   db.transaction((tx) => {
     // tx.executeSql("INSERT INTO Repos (id) VALUES (?);", [1]);
@@ -27,6 +29,7 @@ export function InsertData(data) {
   });
 }
 
+// Fetch all data
 export function getAllData(callback) {
   db.transaction((tx) => {
     tx.executeSql("SELECT * FROM Repos;", [], (_, { rows }) => {
@@ -36,6 +39,7 @@ export function getAllData(callback) {
   });
 }
 
+// Deletion query
 export function DeleteItemById(id) {
   db.transaction((tx) => {
     tx.executeSql("DELETE FROM Repos WHERE id = ?;", [id], (_, result) => {});
